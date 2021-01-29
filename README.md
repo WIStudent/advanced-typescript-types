@@ -2,6 +2,8 @@
 
 A collection of typescript types I found usefull at some point.
 
-![](./advanced-typescript-types.jpg)
+<img src="./advanced-typescript-types.jpg" width=350>
+
+#
 
 - [Omit indices](./01-omit-indices.md)
