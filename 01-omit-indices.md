@@ -11,7 +11,7 @@ type KnownKeys<T> = {
       : K
 } extends { [_ in keyof T]: infer U } ? U : never
 
-type OmitIndices<T> = Pick<T, KnownKeys<T>>
+type OmitIndices<T> = KnownKeys<T> extends keyof T ? Pick<T, KnownKeys<T>> : never
 ```
 
 ## Usage
@@ -70,7 +70,7 @@ then takes every value type from the previous interace and concatinates them to
 These are then used in 
 
 ```typescript
-type OmitIndices<T> = Pick<T, KnownKeys<T>>
+type OmitIndices<T> = KnownKeys<T> extends keyof T ? Pick<T, KnownKeys<T>> : never
 ```
 
 to only pick the fields whose names are included in that union.
