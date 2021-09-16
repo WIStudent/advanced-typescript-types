@@ -7,3 +7,4 @@ A collection of typescript types I found useful at some point.
 #
 
 - [Omit indices](./01-omit-indices.md)
+- [Typed Omit Function](./02-typed-omit-function.md)
