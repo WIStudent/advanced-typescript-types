@@ -1,5 +1,7 @@
 # Omit Indices
 
+***Update**: Does not work in Typescript 4.3 and newer.*
+
 Remove indices from an interface, only leaving known keys.
 
 ```typescript
@@ -24,7 +26,7 @@ interface WithIndices {
   1?: boolean;
 }
 
-type WithoutIndices = OmitIndices<T>
+type WithoutIndices = OmitIndices<WithIndices>
 // Result
 type WithoutIndices = {
   a: number;
@@ -66,6 +68,7 @@ then takes every value type from the previous interace and concatinates them to
 ```typescript
 "a" | "b" | 1
 ```
+***Update**: This step above no longer works in Typescript 4.3 and newer. Instead of `"a"|"b"|1` it now returns `never`*.
 
 These are then used in 
 
